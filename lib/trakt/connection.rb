@@ -38,6 +38,7 @@ module Trakt
     end
     def get(path,query)
       full_path = File.join(path,trakt.apikey, query);
+      puts "full_path"+full_path
       full_path.gsub!(%r{/*$},'')
       result = connection.get(:path => full_path)
       parse(result)
